@@ -16,8 +16,8 @@ const COLORS = ["#9c1bb3", "#FFBB28", "#FF8042"];
 const WhyReact = () => {
   return (
     <div className="text-white flex flex-col justify-center items-center gap-3">
-      <span className="text-transparent text-center inline-flex text-4xl font-bold bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-        Why use React? <FaReact size={35} className="text-pink-500 "/>
+      <span className="text-transparent text-center text-ellipsis inline-flex text-4xl font-bold bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+        Why use React? <FaReact size={35} className="block text-pink-500"/>
       </span>
 
       <span className="text-gray-200">

@@ -21,23 +21,23 @@ const Footer = () => {
         <div className="flex justify-between items-center gap-4 md:gap-16 my-6">
           <FaFacebookSquare
             size={30}
-            className="text-purple-800 cursor-pointer bg-gradient-to-r from-primary-400 to-secondary-600 rounded"
+            className="text-purple-800 cursor-pointer  rounded"
           />
           <FaInstagram
             size={30}
-            className=" cursor-pointer text-purple-800 bg-gradient-to-r from-primary-400 to-secondary-600 rounded"
+            className=" cursor-pointer text-purple-800  rounded"
           />
           <FaTwitterSquare
             size={30}
-            className=" cursor-pointer text-purple-800 bg-gradient-to-r from-primary-400 to-secondary-600 rounded"
+            className=" cursor-pointer text-purple-800  rounded"
           />
           <FaGithubSquare
             size={30}
-            className="text-purple-800 cursor-pointer bg-gradient-to-r from-primary-400 to-secondary-600 rounded"
+            className="text-purple-800 cursor-pointer  rounded"
           />
           <FaDribbbleSquare
             size={30}
-            className="text-purple-800 cursor-pointer bg-gradient-to-r from-primary-400 to-secondary-600 rounded"
+            className="text-purple-800 cursor-pointer  rounded"
           />
         </div>
       </div>
