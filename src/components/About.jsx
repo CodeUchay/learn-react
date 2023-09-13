@@ -73,7 +73,8 @@ const About = () => {
   return (
     <section className="text-white max-w-[1240px] mx-auto" id="about">
       <div className="md:grid md:grid-cols-2 gap-8  items-center  px-4 mx-10 md:gap-16 ">
-        <img src={about} width={500} height={500} className="animate-bounce-slow "/>
+        <div className=" md:my-20 md:py-10"> 
+        <img src={about} width={500} height={500} className="animate-bounce-slow  "/></div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               About Uche

@@ -9,6 +9,7 @@ import About from "./About";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import WhyReact from "./WhyReact";
+import HowItWorks from "./HowItWorks";
 
 const Home = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -46,28 +47,32 @@ const Home = () => {
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <div className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
               
-                <button onClick={() => scrollToSection('section3')} >About</button>
-                <button onClick={() => scrollToSection('section2')} >Subscribe</button>
-                <button onClick={() => scrollToSection('section4')} >Contact</button>
+                <button onClick={() => scrollToSection('section3')} className="hover:text-primary-700"    >About</button>
+                <button onClick={() => scrollToSection('section2')} className="hover:text-primary-700" >Subscribe</button>
+                <button onClick={() => scrollToSection('section4')} className="hover:text-primary-700"  >Contact</button>
             </div>
           </div>
         </div>
         {navbarOpen ? (<div className="flex flex-col py-4 items-center bg-[#121212] md:hidden">
-        <button onClick={() => {scrollToSection('section3'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-pink-600">About</button>
-                <button onClick={() => {scrollToSection('section2'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-pink-600">Subscribe</button>
-                <button onClick={() => {scrollToSection('section4'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-pink-600">Contact</button>
+        <button onClick={() => {scrollToSection('section3'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">About</button>
+                <button onClick={() => {scrollToSection('section2'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-primary-700">Subscribe</button>
+                <button onClick={() => {scrollToSection('section4'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">Contact</button>
       </div>) : null}
       </nav>
-      <div id="section1" className="container mt-24 mx-auto px-12 py-4">
+      <div id="section1" className="container mt-24 lg:mt-6  mx-auto px-12 py-4">
         <Hero />
       </div>
       <div id="section4" className="container mt-16 mx-auto px-12 py-4">
         <WhyReact />
       </div>
+      
+      <div id="section2" className="container mt-16 mx-auto px-12 py-4">
+        <HowItWorks />
+      </div>
       <div id="section2">
         <Cards />
       </div>
-      <div id="section3">
+      <div id="section3" className="container mt-16 mx-auto py-4">
         <About />
       </div>
       <div id="section4">

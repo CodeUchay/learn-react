@@ -5,7 +5,7 @@ import herolaptop from '../images/herolaptop.png';
 
 const Hero = () => {
   return (
-    <section className="lg:py-16">
+    <section className="lg:p-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -32,6 +32,7 @@ const Hero = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
+              className="text-red-500"
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
