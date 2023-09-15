@@ -41,13 +41,13 @@ const Hero = () => {
           </p>
           <div>
             <a
-              href="/contact"
+              href="/plans"
               className="px-6 inline-block py-3 rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
               Register
             </a>
             <a
-              href="/"
+              href="#section3"
               className="px-1 inline-block py-1 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500  text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-purple-700 hover:shadow-xl rounded-full px-5 py-2">
