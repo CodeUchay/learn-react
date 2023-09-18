@@ -67,7 +67,7 @@ const Register = () => {
     <div>
       <div className="flex justify-center items-center">
         <span className="text-transparent items-center text-center text-4xl font-bold bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-          Registeration
+          Registration
         </span>
       </div>
       <div className="p-10 grid md:grid-cols-2    gap-4 relative">

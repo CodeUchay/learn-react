@@ -41,7 +41,7 @@ function Plans() {
             <h2 className="text-2xl font-bold text-center py-3 text-white">
               Basic
             </h2>
-            <p className="text-center text-4xl font-bold text-white">$149</p>
+            <p className="text-center text-4xl font-bold text-white">€9.99</p>
             
             <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register
@@ -72,7 +72,7 @@ function Plans() {
             <h2 className="text-2xl font-bold text-center py-3 text-white">
               Premium
             </h2>
-            <p className="text-center text-4xl font-bold text-white">$149</p>
+            <p className="text-center text-4xl font-bold text-white">€14.99</p>
             
             <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register
@@ -102,7 +102,7 @@ function Plans() {
             <h2 className="text-2xl font-bold text-center py-3 text-white">
               Gold
             </h2>
-            <p className="text-center text-4xl font-bold text-white">$149</p>
+            <p className="text-center text-4xl font-bold text-white">€29.99</p>
             
             <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register

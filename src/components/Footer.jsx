@@ -13,10 +13,10 @@ const Footer = () => {
     <footer className="footer mt-5 z-10 p-10 md:px-20 border border-t-[#33353F] border-l-transparent border-r-transparent text-white">
       <div className="container flex justify-between ">
         <span>
-          <FaReact size={35} className=" text-secondary-600" /> Learn React by{" "}
+          <FaReact size={35} className=" text-secondary-600" /> React Guy by{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
             CodeUchay
-          </span>{" "}
+          </span>
         </span>
         <div className="flex justify-between items-center gap-4 md:gap-16 my-6">
           <FaFacebookSquare

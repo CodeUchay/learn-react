@@ -28,7 +28,7 @@ const Home = () => {
       <nav className="fixed py-2 md:py-1 mx-auto lg:px-16 border-b text-gray-300 border-b-[#33353F] bg-[#121212] top-0 left-0 right-0 z-10 bg-opacity-100 ">
         <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
           {/* LOGO */}
-          <span className="flex flex-row text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">ReactDev <FaReact size={35} className=" text-secondary-600" /></span>
+          <span className="flex flex-row text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">ReactGuy <FaReact size={35} className=" text-secondary-600" /></span>
           <div className="mobile-menu block md:hidden">
             {!navbarOpen ? (
               <button
