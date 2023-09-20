@@ -2,18 +2,21 @@ import { motion } from "framer-motion";
 import React, { useTransition, useState } from "react";
 import about from "../images/about.png";
 
-const TAB_DATA = [
+const list_data = [
   {
-    title: "Skills",
-    id: "skills",
+    title: "Stack",
+    id: "stack",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>React.js</li>
+        <li>Typescript.js</li>
+        <li>Next.js</li>
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>Mongo db</li>
+        <li>Firebase</li>
+        <li>Tailwind CSS/SCSS</li>
       </ul>
     ),
   },
@@ -22,8 +25,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Yaba College of Technology, Nigeria </li>
+        <li>Esigelec, France</li>
       </ul>
     ),
   },
@@ -33,14 +36,13 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
       </ul>
     ),
   },
 ];
 
 const About = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("stack");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -80,42 +82,39 @@ const About = () => {
               About Uche
             </span></h2>
           <p className="text-base lg:text-lg">
-            Uche is a full stack web developer with a passion for creating
+            Uche is a Software Engineer, who specializes in full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
+            working with JavaScript, React.js, Typescript.js, Next.js,  Redux, Node.js, Express.js, Mongo DB,  Firebase, Tailwind CSS,
+            Figma, Adobe, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I am excited to work with others to create amazing web/mobile applications.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
+              selectTab={() => handleTabChange("stack")}
+              active={tab === "stack"}
             >
-              {" "}
-              Skills{" "}
+              Stack
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              {" "}
-              Certifications{" "}
+              Certifications
             </TabButton>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+          <div className="mt-8" >
+            {list_data.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

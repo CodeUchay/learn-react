@@ -1,7 +1,6 @@
 import React from "react";
 import {
   FaDribbbleSquare,
-  FaFacebookSquare,
   FaGithubSquare,
   FaInstagram,
   FaTwitterSquare,
@@ -18,27 +17,31 @@ const Footer = () => {
             CodeUchay
           </span>
         </span>
-        <div className="flex justify-between items-center gap-4 md:gap-16 my-6">
-          <FaFacebookSquare
-            size={30}
-            className="text-purple-800 cursor-pointer  rounded"
-          />
+        <div className="flex justify-between items-center gap-4 md:gap-36 my-6">
+         
+          <a 
+            href="https://instagram.com"
+            target="_blank">
           <FaInstagram
-            size={30}
+            size={35}
             className=" cursor-pointer text-purple-800  rounded"
-          />
+            
+          /></a>
+           <a 
+            href="https://twitter.com/offuchay"
+            target="_blank">
           <FaTwitterSquare
-            size={30}
+            size={35}
             className=" cursor-pointer text-purple-800  rounded"
-          />
+          /></a>
+          <a 
+            href="https://github.com/codeuchay"
+            target="_blank">
           <FaGithubSquare
-            size={30}
+            size={35}
             className="text-purple-800 cursor-pointer  rounded"
           />
-          <FaDribbbleSquare
-            size={30}
-            className="text-purple-800 cursor-pointer  rounded"
-          />
+          </a>
         </div>
       </div>
       <p className="text-slate-500">All rights reserved.</p>

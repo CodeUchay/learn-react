@@ -9,7 +9,8 @@ function Plans() {
         window.scrollTo(0, 0);
       }, []);
   return (
-    <div className="container w-full py-8 px-10  bg-[#121212] text-gray-300">
+    <div className="w-full mx-auto bg-[#121212] ">
+    <div className="container w-full  py-8 px-10  bg-[#121212] text-gray-300">
       <Link
         to="/"
         className="text-primary-600 cursor-pointer text-2xl underline mb-4 py-1 flex items-center "
@@ -43,7 +44,7 @@ function Plans() {
             </h2>
             <p className="text-center text-4xl font-bold text-white">€9.99</p>
             
-            <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
+            <button className="bg-gradient-to-br cursor-default from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register
             </button>
           </div>
@@ -74,7 +75,7 @@ function Plans() {
             </h2>
             <p className="text-center text-4xl font-bold text-white">€14.99</p>
             
-            <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
+            <button className="bg-gradient-to-br cursor-default from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register
             </button>
           </div>
@@ -104,7 +105,7 @@ function Plans() {
             </h2>
             <p className="text-center text-4xl font-bold text-white">€29.99</p>
             
-            <button className="bg-gradient-to-br from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
+            <button className="bg-gradient-to-br cursor-default from-primary-500 to-secondary-500 text-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
               Register
             </button>
           </div>
@@ -127,6 +128,7 @@ function Plans() {
           </div>
         </div>
         <Register/>
+      </div>
       </div>
       
     </div>
