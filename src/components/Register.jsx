@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useSelector } from 'react-redux';
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -63,26 +64,60 @@ const Register = () => {
       </div>
     );
   };
+
+     // Language Selector 
+     const selectedLanguage = useSelector((state) => state.language);
+     // Define translation content based on selectedLanguage
+     const translations = {
+      en: {
+        title: 'Registeration',
+        header: (<>Complete this form to
+          <span className="text-primary-500 font-semibold"> Register</span> or
+          <span className="text-secondary-500 font-semibold"> Contact Me</span></>),
+        paragraph: "I'm always eager to mentor new students, my inbox is always open. If you have a question or want to start right away, I'll get back to you immediatley!",
+        emailLabel: 'Your Email',
+        nameLabel: 'Name',
+        phoneLabel: 'Phone',
+        planLabel: 'Plan',
+        planLabels: {plan1: 'Basic', plan2: 'Premium', plan3: 'Gold'},
+        notesLabel: 'Notes',
+        notesPlaceHolder: 'I would like to...',
+        button: 'Send Message'
+      },
+      fr: {
+        title: 'Enregistrement',
+        header: (<>Complétez ce formulaire pour
+          <span className="text-primary-500 font-semibold"> Vous Inscrire</span>  ou
+          <span className="text-secondary-500 font-semibold"> Me Contacter</span></>),
+        paragraph: "Je suis toujours désireuse d'encadrer de nouveaux étudiants, ma boîte de réception est toujours ouverte. Si vous avez une question ou si vous voulez commencer tout de suite, je vous répondrai immédiatement!",
+        emailLabel: 'Votre Email',
+        nameLabel: 'Votre Nom',
+        phoneLabel: 'Téléphone',
+        planLabel: 'Plan',
+        planLabels: {plan1: 'Régulière', plan2: 'Prime', plan3: 'Or'},
+        notesLabel: 'Remarque',
+        notesPlaceHolder: 'Je voudrais...',
+        button: 'Envoyer le message'
+      },
+    };
+  
+    const { title, header, paragraph, emailLabel, nameLabel, phoneLabel, planLabel, planLabels, notesLabel, notesPlaceHolder, button } = translations[selectedLanguage];
+  
   return (
     <div >
       <div className="flex justify-center items-center">
         <span className="text-transparent items-center text-center text-4xl font-bold bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-          Registration
+          {title}
         </span>
       </div>
       <div className="p-10 grid md:grid-cols-2    gap-4 relative">
         <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-20 w-20 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
         <div className="">
           <h5 className="text-xl font-bold text-white my-2">
-            Complete this form to{" "}
-            <span className="text-primary-500 font-semibold">Register</span> or{" "}
-            <span className="text-secondary-500 font-semibold">Contact Me</span>
+            {header}
           </h5>
           <p className="text-gray-400 mb-4 max-w-md">
-            {" "}
-            I&apos;m always eager to mentor new students, my inbox is always
-            open. If you have a question or want to start right away, I&apos;ll
-            get back to you immediatley!
+            {paragraph}
           </p>
           <div className="socials flex flex-row gap-2"></div>
         </div>
@@ -93,7 +128,7 @@ const Register = () => {
                 htmlFor="email"
                 className="text-white block mb-2 text-sm font-medium"
               >
-                Your email
+                {emailLabel}
               </label>
               <input
                 type="email"
@@ -112,7 +147,7 @@ const Register = () => {
                 htmlFor="name"
                 className="text-white block mb-2 text-sm font-medium"
               >
-                Name
+                {nameLabel}
               </label>
               <input
                 type="text"
@@ -130,7 +165,7 @@ const Register = () => {
                 htmlFor="phone"
                 className="text-white block mb-2 text-sm font-medium"
               >
-                Phone
+                {phoneLabel}
               </label>
               <input
                 type="phone"
@@ -148,7 +183,7 @@ const Register = () => {
                 htmlFor="subject"
                 className="text-white block text-sm mb-2 font-medium"
               >
-                Plan
+                {planLabel}
               </label>
               <div className="text-gray-300">
                 <label className="inline-flex items-center">
@@ -160,7 +195,7 @@ const Register = () => {
                     checked={plan === "basic"}
                     className="mr-2"
                   />
-                  Basic
+                  {planLabels.plan1}
                 </label>
                 <label className="inline-flex items-center ml-4">
                   <input
@@ -171,7 +206,7 @@ const Register = () => {
                     checked={plan === "platinum"}
                     className="mr-2"
                   />
-                  Platinum
+                  {planLabels.plan2}
                 </label>
                 <label className="inline-flex items-center ml-4">
                   <input
@@ -182,7 +217,7 @@ const Register = () => {
                     checked={plan === "gold"}
                     className="mr-2"
                   />
-                  Gold
+                  {planLabels.plan3}
                 </label>
               </div>
             </div>
@@ -191,14 +226,14 @@ const Register = () => {
                 htmlFor="message"
                 className="text-white block text-sm mb-2 font-medium"
               >
-                Notes
+                {notesLabel}
               </label>
               <textarea
                 name="message"
                 id="message"
                 value={message}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="I would like to..."
+                placeholder={notesPlaceHolder}
                 onChange={(e) => setMessage (e.target.value)}
               />
             </div>
@@ -206,7 +241,7 @@ const Register = () => {
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Send Message
+             {button}
             </button>
           </form>
         </div>

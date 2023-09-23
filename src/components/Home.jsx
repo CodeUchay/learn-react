@@ -12,10 +12,12 @@ import Footer from "./Footer";
 import WhyReact from "./WhyReact";
 import HowItWorks from "./HowItWorks";
 import Register from "./Register";
+import LanguageSelector from "./LanguageSelector";
+import { useSelector } from 'react-redux';
 
 const Home = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-
+  
   function scrollToSection(id) {
     const element = document.getElementById(id);
     if (element) {
@@ -23,13 +25,37 @@ const Home = () => {
     }
   }
 
+    // Language Selector 
+    const selectedLanguage = useSelector((state) => state.language);
+   // Define translation content based on selectedLanguage
+   const translations = {
+    en: {
+      about: 'About',
+      subscriptions: 'Subscription',
+      plans: 'Plans',
+      contact: 'Contact',
+      register: 'Register',
+    },
+    fr: {
+      about: 'À propos',
+      subscriptions: 'Abonnements',
+      plans: 'Plans',
+      contact: 'Contacter',
+      register: 'Registre',
+    },
+  };
+
+  const { about, subscriptions, plans, contact, register } = translations[selectedLanguage];
+
   return (
     <div className="flex min-h-screen flex-col bg-[#121212]">
       <nav className="fixed py-2 md:py-1 mx-auto lg:px-16 border-b text-gray-300 border-b-[#33353F] bg-[#121212] top-0 left-0 right-0 z-10 bg-opacity-100 ">
         <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
           {/* LOGO */}
           <span className="flex flex-row text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">ReactGuy <FaReact size={35} className=" text-secondary-600" /></span>
-          <div className="mobile-menu block md:hidden">
+          
+          <div className="mobile-menu flex justify-center items-center gap-2 md:hidden">
+          <LanguageSelector/>
             {!navbarOpen ? (
               <button
                 onClick={() => setNavbarOpen(true)}
@@ -46,23 +72,24 @@ const Home = () => {
               </button>
             )}
           </div>
+          
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <div className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-              
-                <button onClick={() => scrollToSection('section5')} className="hover:text-primary-700"    >About</button>
-                <button onClick={() => scrollToSection('section3')} className="hover:text-primary-700" >Subscriptions</button>
+            <LanguageSelector/>
+                <button onClick={() => scrollToSection('section5')} className="hover:text-primary-700">{about}</button>
+                <button onClick={() => scrollToSection('section3')} className="hover:text-primary-700">{subscriptions}</button>
                 
-                <button onClick={() => scrollToSection('section6')} className="hover:text-primary-700"  >Contact</button>
-                <Link to="/plans" className="border rounded px-3 py-2  border-primary-500 text-primary-700 hover:bg-primary-700 hover:text-white">Register</Link>
+                <button onClick={() => scrollToSection('section6')} className="hover:text-primary-700">{contact}</button>
+                <Link to="/plans" className="border rounded px-3 py-2  border-primary-500 text-primary-700 hover:bg-primary-700 hover:text-white">{register}</Link>
             </div>
           </div>
         </div>
         {navbarOpen ? (<div className="flex flex-col py-4 items-center bg-[#121212] md:hidden">
-        <button onClick={() => {scrollToSection('section5'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">About</button>
-                <button onClick={() => {scrollToSection('section3'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-primary-700">Subscription</button>
-                <button onClick={() => {scrollToSection('section2'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-primary-700">Plans</button>
-                <button onClick={() => {scrollToSection('section6'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">Contact</button>
-                <Link to="/plans" onClick={() => {scrollToSection('section4'); setNavbarOpen(!navbarOpen)}} > <button className="py-3 w-[300px] m-1 px-16 text-primary-700 hover:bg-primary-700 hover:text-white">Register</button>
+        <button onClick={() => {scrollToSection('section5'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">{about}</button>
+                <button onClick={() => {scrollToSection('section3'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-primary-700">{subscriptions}</button>
+                <button onClick={() => {scrollToSection('section2'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px]  m-1 px-16  hover:bg-primary-700">{plans}</button>
+                <button onClick={() => {scrollToSection('section6'); setNavbarOpen(!navbarOpen)}} className="py-3 w-[300px] m-1 px-16  hover:bg-primary-700">{contact}</button>
+                <Link to="/plans" onClick={() => {scrollToSection('section4'); setNavbarOpen(!navbarOpen)}} > <button className="py-3 w-[300px] m-1 px-16 text-primary-700 hover:bg-primary-700 hover:text-white">{register}</button>
                 </Link>
       </div>) : null}
       </nav>
